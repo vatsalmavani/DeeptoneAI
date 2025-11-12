@@ -46,6 +46,7 @@ def classify_audio(file_stream):
             'recall': round(confidence - 0.05, 2),
             'precision': round(confidence - 0.03, 2),
             'f1_score': round(confidence - 0.04, 2),
+            'confidence': round(confidence, 2)
         }
 
     except Exception as e:
