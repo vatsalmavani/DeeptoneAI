@@ -12,7 +12,7 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def home():
-    return "🎧 Welcome to Deeptone AI API — Deepfake Voice Detection"
+    return "Welcome to our deepfake voice detection system..."
 
 #  AUDIO PREDICTION 
 @main.route('/predict', methods=['POST'])
@@ -127,7 +127,8 @@ def get_history(username):
                 "precision": float(item.get("precision", 0)),
                 "f1_score": float(item.get("f1_score", 0)),
                 "filename": item.get("filename", "unknown"),
-                "timestamp": item.get("timestamp").isoformat() if item.get("timestamp") else ""
+                "timestamp": item.get("timestamp").isoformat() if item.get("timestamp") else "",
+                "confidence": float(item.get("confidence", 0))
             })
 
         return jsonify(history), 200
